@@ -36,7 +36,9 @@
                 <td>{{ elemento.deadline }}</td>
                 <td>{{ elemento.finished_at|default:"Não Finalizada!" }}</td>
                 <td>
-                    <a class="btn btn-success btn-sm" href="#" role="button">Concluir</a> | <a class="btn btn-danger btn-sm" href="#" role="button">Excluir</a>
+                    <a class="btn btn-success btn-sm" href="{% url "concluida" elemento.id %}" role="button">Concluir</a> | 
+                    <a class="btn btn-danger btn-sm" href="{% url "excluir" elemento.id %}" role="button"  >Excluir</a> | 
+                    <a class="btn btn-info btn-sm" href="{% url "editar" elemento.id %}" role="button">Editar</a>
                 </td>
             </tr>
             {% endfor %}
